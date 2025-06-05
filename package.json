@@ -8,7 +8,7 @@
   "author": "Aurélien Luciani <luciani@ebi.ac.uk> (https://github.com/aurel-l)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ProteinsWebTeam/domain_gfx.git"
+    "url": "https://github.com/EBI-Metagenomics/domain_gfx.git"
   },
   "engineStrict": true,
   "engines": {

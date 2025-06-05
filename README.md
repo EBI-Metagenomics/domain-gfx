@@ -1,11 +1,11 @@
-[![Test and Publish](https://github.com/ProteinsWebTeam/domain-gfx/workflows/Test%20and%20Publish/badge.svg)](https://github.com/ProteinsWebTeam/domain-gfx/actions?query=workflow%3A%22Test+and+Publish%22)
+[![Test and Publish](https://github.com/EBI-Metagenomics/domain-gfx/workflows/Test%20and%20Publish/badge.svg)](https://github.com/EBI-Metagenomics/domain-gfx/actions?query=workflow%3A%22Test+and+Publish%22)
 
 # Domain graphics library
 
 _in development_
 
 A live example is available to play with at
-[https://proteinswebteam.github.io/domain-gfx/](https://proteinswebteam.github.io/domain-gfx/)
+[https://ebi-metagenomics.github.io/domain-gfx/](https://ebi-metagenomics.github.io/domain-gfx/)
 
 ## Installation:
 
