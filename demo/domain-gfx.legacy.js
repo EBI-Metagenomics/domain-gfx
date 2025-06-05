@@ -21195,7 +21195,7 @@ var DomainGfx = (function (t) {
                         )
                         .concat(d, 'px;\n          background-color: ')
                         .concat(n.color, ';\n        "></span>\n      </span>')
-                        .concat(n.end, '\n    '));
+                        .concat(n.modelLength, '\n    '));
                   }
                   return '\n    <table>\n      <thead>\n        <tr>\n          <th colspan="2">\n            '
                     .concat(i || (u && 'Match coordinates'), '\n            ')
