@@ -1,7 +1,7 @@
 // @flow
-export default (data/*: Object */) => {
+export default (data /*: Object */) => {
   // flatten data, metadata overwrites duplicated
-  const _data = {...data, ...(data.metadata || {})};
+  const _data = { ...data, ...(data.metadata || {}) };
   // shortcuts and preprocess
   const mainTitle = _data.identifier || _data.type || _data.accession || '';
   const subTitle = _data.accession || '';
@@ -12,25 +12,39 @@ export default (data/*: Object */) => {
   const targetEnd = _data.targetEnd || _data.tEnd || _data.tend;
   const queryStart = _data.queryStart || _data.qStart || _data.qstart;
   const queryEnd = _data.queryEnd || _data.qEnd || _data.qend;
+
   let coordinates;
-  if (_data.end) {
-    const length = _data.end - _data.start;
-    const aliStart = _data.aliStart || _data.start;
-    const aliEnd = _data.aliEnd || _data.end;
-    let offset = 0;
-    if (aliStart - _data.start > 0) {
-      offset = (aliStart - _data.start) / length * 100;
+
+  if (_data.start && _data.end) {
+    coordinates = `${_data.start} - ${_data.end}`;
+
+    if (_data.aliStart && _data.aliEnd) {
+      coordinates += ` (alignment region ${_data.aliStart} - ${_data.aliEnd})`;
     }
-    coordinates = `
-      ${_data.start}<span style="width: 100px;" class="domain">
+  }
+
+  let modelMatch;
+
+  if (_data.modelStart) {
+    let offset = 0;
+
+    if (_data.modelStart > 1) {
+      offset = (100 * (_data.modelStart - 1)) / _data.modelLength;
+    }
+
+    modelMatch = `
+      1<span style="width: 100px;" class="domain">
         <span class="alignment" style="
-          width: ${(aliEnd - aliStart) * 100 / length}px;
+          width: ${
+            (100 * (_data.modelEnd - _data.modelStart + 1)) / _data.modelLength
+          }px;
           margin-left: ${offset}px;
           background-color: ${_data.color};
         "></span>
       </span>${_data.end}
     `;
   }
+
   // render to string
   return `
     <table>
@@ -38,47 +52,81 @@ export default (data/*: Object */) => {
         <tr>
           <th colspan="2">
             ${mainTitle || (targetStart && 'Match coordinates')}
-            ${(subTitle && subTitle !== mainTitle) ? ` (${subTitle})` : ''}
+            ${subTitle && subTitle !== mainTitle ? ` (${subTitle})` : ''}
           </th>
         </tr>
       </thead>
       <tbody>
-        ${description ? `
+        ${
+          description
+            ? `
         <tr>
           <td>Description:</td>
           <td>${description}</td>
         </tr>
-        ` : ''}
-        ${coordinates ? `
+        `
+            : ''
+        }
+        ${
+          coordinates
+            ? `
         <tr>
           <td>Coordinates:</td>
-          <td class="coordinates">${coordinates}</td>
+          <td>${coordinates}</td>
         </tr>
-        ` : ''}
-        ${(!coordinates && position) ? `
+        `
+            : ''
+        }
+        ${
+          modelMatch
+            ? `
+        <tr>
+          <td>Model Match:</td>
+          <td class="coordinates">${modelMatch}</td>
+        </tr>
+        `
+            : ''
+        }
+        ${
+          !coordinates && position
+            ? `
         <tr>
           <td>Position:</td>
           <td>${position}</td>
         </tr>
-        ` : ''}
-        ${source ? `
+        `
+            : ''
+        }
+        ${
+          source
+            ? `
         <tr>
           <td>Source:</td>
           <td>${source}</td>
         </tr>
-        ` : ''}
-        ${targetStart ? `
+        `
+            : ''
+        }
+        ${
+          targetStart
+            ? `
         <tr>
           <td>Target:</td>
           <td>${targetStart}${targetEnd ? ` - ${targetEnd}` : ''}</td>
         </tr>
-        ` : ''}
-        ${queryStart ? `
+        `
+            : ''
+        }
+        ${
+          queryStart
+            ? `
         <tr>
           <td>Query:</td>
           <td>${queryStart}${queryEnd ? ` - ${queryEnd}` : ''}</td>
         </tr>
-        ` : ''}
+        `
+            : ''
+        }
       </tbody>
     </table>
   `;
