@@ -41,7 +41,7 @@ export default (data /*: Object */) => {
           margin-left: ${offset}px;
           background-color: ${_data.color};
         "></span>
-      </span>${_data.end}
+      </span>${_data.modelLength}
     `;
   }
 
