@@ -185,8 +185,8 @@ var DomainGfx = (function (t) {
       k = C.isPrototypeOf,
       T = v('toStringTag'),
       A = g('TYPED_ARRAY_TAG'),
-      O = i && !!p && 'Opera' !== u(a.opera),
-      L = !1,
+      L = i && !!p && 'Opera' !== u(a.opera),
+      O = !1,
       M = {
         Int8Array: 1,
         Uint8Array: 1,
@@ -204,19 +204,19 @@ var DomainGfx = (function (t) {
         var e = u(t);
         return l(M, e) || l(E, e);
       };
-    for (n in M) a[n] || (O = !1);
+    for (n in M) a[n] || (L = !1);
     if (
-      (!O || 'function' != typeof x || x === Function.prototype) &&
+      (!L || 'function' != typeof x || x === Function.prototype) &&
       ((x = function () {
         throw TypeError('Incorrect invocation');
       }),
-      O)
+      L)
     )
       for (n in M) a[n] && p(a[n], x);
-    if ((!O || !S || S === C) && ((S = x.prototype), O))
+    if ((!L || !S || S === C) && ((S = x.prototype), L))
       for (n in M) a[n] && p(a[n].prototype, S);
-    if ((O && d(w) !== S && p(w, S), o && !l(S, T)))
-      for (n in ((L = !0),
+    if ((L && d(w) !== S && p(w, S), o && !l(S, T)))
+      for (n in ((O = !0),
       h(S, T, {
         get: function () {
           return s(this) ? this[A] : void 0;
@@ -225,8 +225,8 @@ var DomainGfx = (function (t) {
       M))
         a[n] && c(a[n], A, n);
     t.exports = {
-      NATIVE_ARRAY_BUFFER_VIEWS: O,
-      TYPED_ARRAY_TAG: L && A,
+      NATIVE_ARRAY_BUFFER_VIEWS: L,
+      TYPED_ARRAY_TAG: O && A,
       aTypedArray: function (t) {
         if (_(t)) return t;
         throw TypeError('Target is not a typed array');
@@ -249,7 +249,7 @@ var DomainGfx = (function (t) {
               var i = a[n];
               i && l(i.prototype, t) && delete i.prototype[t];
             }
-          (S[t] && !r) || f(S, t, r ? e : (O && y[t]) || e);
+          (S[t] && !r) || f(S, t, r ? e : (L && y[t]) || e);
         }
       },
       exportTypedArrayStaticMethod: function (t, e, r) {
@@ -259,7 +259,7 @@ var DomainGfx = (function (t) {
             if (r) for (n in M) (i = a[n]) && l(i, t) && delete i[t];
             if (x[t] && !r) return;
             try {
-              return f(x, t, r ? e : (O && m[t]) || e);
+              return f(x, t, r ? e : (L && m[t]) || e);
             } catch (t) {}
           }
           for (n in M) !(i = a[n]) || (i[t] && !r) || f(i, t, e);
@@ -812,10 +812,10 @@ var DomainGfx = (function (t) {
       k = r(51),
       T = r(9),
       A = r(13),
-      O = r(17),
-      L = r(89),
-      M = O.get,
-      E = O.set,
+      L = r(17),
+      O = r(89),
+      M = L.get,
+      E = L.set,
       _ = T.f,
       N = A.f,
       I = Math.round,
@@ -909,7 +909,7 @@ var DomainGfx = (function (t) {
               ((g = e(function (t, e, r, n) {
                 return (
                   u(t, g, s),
-                  L(
+                  O(
                     y(e)
                       ? G(e)
                         ? void 0 !== n
@@ -1238,8 +1238,8 @@ var DomainGfx = (function (t) {
       k = r(13),
       T = r(9),
       A = r(75),
-      O = r(15),
-      L = r(16),
+      L = r(15),
+      O = r(16),
       M = r(101),
       E = r(76),
       _ = r(57),
@@ -1367,7 +1367,7 @@ var DomainGfx = (function (t) {
         );
       };
     (l ||
-      (L(
+      (O(
         (V = function () {
           if (this instanceof V) throw TypeError('Symbol is not a constructor');
           var t =
@@ -1387,7 +1387,7 @@ var DomainGfx = (function (t) {
           return H(this).tag;
         }
       ),
-      L(V, 'withoutSetter', function (t) {
+      O(V, 'withoutSetter', function (t) {
         return it(N(t), t);
       }),
       (A.f = lt),
@@ -1405,7 +1405,7 @@ var DomainGfx = (function (t) {
             return H(this).description;
           },
         }),
-        a || L(U, 'propertyIsEnumerable', lt, { unsafe: !0 }))),
+        a || O(U, 'propertyIsEnumerable', lt, { unsafe: !0 }))),
     n({ global: !0, wrap: !0, forced: !l, sham: !l }, { Symbol: V }),
     F(w(tt), function (t) {
       P(t);
@@ -1496,7 +1496,7 @@ var DomainGfx = (function (t) {
           },
         }
       );
-    V.prototype[z] || O(V.prototype, z, V.prototype.valueOf),
+    V.prototype[z] || L(V.prototype, z, V.prototype.valueOf),
       R(V, 'Symbol'),
       (_[W] = !0);
   },
@@ -2322,7 +2322,7 @@ var DomainGfx = (function (t) {
           A = h(function (t) {
             new y(t);
           }),
-          O =
+          L =
             !g &&
             f(function () {
               for (var t = new y(), e = 5; e--; ) t[m](e, e);
@@ -2335,8 +2335,8 @@ var DomainGfx = (function (t) {
             return null != r && l(r, n[m], { that: n, AS_ENTRIES: v }), n;
           })).prototype = b),
           (b.constructor = w)),
-          (T || O) && (S('delete'), S('has'), v && S('get')),
-          (O || k) && S(m),
+          (T || L) && (S('delete'), S('has'), v && S('get')),
+          (L || k) && S(m),
           g && b.clear && delete b.clear;
       }
       return (
@@ -2374,8 +2374,8 @@ var DomainGfx = (function (t) {
       k = C,
       T = n.DataView,
       A = T && T.prototype,
-      O = Object.prototype,
-      L = n.RangeError,
+      L = Object.prototype,
+      O = n.RangeError,
       M = d.pack,
       E = d.unpack,
       _ = function (t) {
@@ -2406,7 +2406,7 @@ var DomainGfx = (function (t) {
       F = function (t, e, r, n) {
         var i = h(r),
           o = x(t);
-        if (i + e > o.byteLength) throw L('Wrong index');
+        if (i + e > o.byteLength) throw O('Wrong index');
         var a = x(o.buffer).bytes,
           s = i + o.byteOffset,
           l = a.slice(s, s + e);
@@ -2415,7 +2415,7 @@ var DomainGfx = (function (t) {
       W = function (t, e, r, n, i, o) {
         var a = h(r),
           s = x(t);
-        if (a + e > s.byteLength) throw L('Wrong index');
+        if (a + e > s.byteLength) throw O('Wrong index');
         for (
           var l = x(s.buffer).bytes, u = a + s.byteOffset, c = n(+i), f = 0;
           f < e;
@@ -2448,7 +2448,7 @@ var DomainGfx = (function (t) {
           (z = H[U++]) in k || a(k, z, C[z]);
         B.constructor = k;
       }
-      v && p(A) !== O && v(A, O);
+      v && p(A) !== L && v(A, L);
       var V = new T(new k(2)),
         G = A.setInt8;
       V.setInt8(0, 2147483648),
@@ -2477,9 +2477,9 @@ var DomainGfx = (function (t) {
           u(this, T, 'DataView'), u(t, k, 'DataView');
           var n = x(t).byteLength,
             o = c(e);
-          if (o < 0 || o > n) throw L('Wrong offset');
+          if (o < 0 || o > n) throw O('Wrong offset');
           if (o + (r = void 0 === r ? n - o : f(r)) > n)
-            throw L('Wrong length');
+            throw O('Wrong length');
           S(this, { buffer: t, byteLength: r, byteOffset: o }),
             i ||
               ((this.buffer = t), (this.byteLength = r), (this.byteOffset = o));
@@ -2796,7 +2796,7 @@ var DomainGfx = (function (t) {
         x,
         S,
         C = function (t) {
-          if (t === d && L) return L;
+          if (t === d && O) return O;
           if (!v && t in A) return A[t];
           switch (t) {
             case 'keys':
@@ -2813,9 +2813,9 @@ var DomainGfx = (function (t) {
         k = e + ' Iterator',
         T = !1,
         A = t.prototype,
-        O = A[g] || A['@@iterator'] || (d && A[d]),
-        L = (!v && O) || C(d),
-        M = ('Array' == e && A.entries) || O;
+        L = A[g] || A['@@iterator'] || (d && A[d]),
+        O = (!v && L) || C(d),
+        M = ('Array' == e && A.entries) || L;
       if (
         (M &&
           ((w = o(M.call(new t()))),
@@ -2827,20 +2827,20 @@ var DomainGfx = (function (t) {
             s(w, k, !0, !0),
             f && (h[k] = m))),
         'values' == d &&
-          O &&
-          'values' !== O.name &&
+          L &&
+          'values' !== L.name &&
           ((T = !0),
-          (L = function () {
-            return O.call(this);
+          (O = function () {
+            return L.call(this);
           })),
-        (f && !b) || A[g] === L || l(A, g, L),
-        (h[e] = L),
+        (f && !b) || A[g] === O || l(A, g, O),
+        (h[e] = O),
         d)
       )
         if (
           ((x = {
             values: C('values'),
-            keys: y ? L : C('keys'),
+            keys: y ? O : C('keys'),
             entries: C('entries'),
           }),
           b)
@@ -3194,13 +3194,13 @@ var DomainGfx = (function (t) {
             t.className = r.slice(0, n.index) + (i ? n[1] + i : '');
           }
         };
-      function O(t) {
+      function L(t) {
         for (var e = t.childNodes.length; e > 0; --e)
           t.removeChild(t.firstChild);
         return t;
       }
-      function L(t, e) {
-        return O(t).appendChild(e);
+      function O(t, e) {
+        return L(t).appendChild(e);
       }
       function M(t, e, r, n) {
         var i = document.createElement(t);
@@ -3476,9 +3476,9 @@ var DomainGfx = (function (t) {
               S = k - 1;
             }
           }
-          for (var O = 0, L = l; O < c; ++O) {
-            var M = f[O];
-            'L' == L && '1' == M ? (f[O] = 'L') : r.test(M) && (L = M);
+          for (var L = 0, O = l; L < c; ++L) {
+            var M = f[L];
+            'L' == O && '1' == M ? (f[L] = 'L') : r.test(M) && (O = M);
           }
           for (var E = 0; E < c; ++E)
             if (e.test(f[E])) {
@@ -3634,15 +3634,15 @@ var DomainGfx = (function (t) {
       }
       var Tt,
         At,
-        Ot = (function () {
+        Lt = (function () {
           if (a && s < 9) return !1;
           var t = M('div');
           return 'draggable' in t || 'dragDrop' in t;
         })();
-      function Lt(t) {
+      function Ot(t) {
         if (null == Tt) {
           var e = M('span', '​');
-          L(t, M('span', [e, document.createTextNode('x')])),
+          O(t, M('span', [e, document.createTextNode('x')])),
             0 != t.firstChild.offsetHeight &&
               (Tt = e.offsetWidth <= 1 && e.offsetHeight > 2 && !(a && s < 8));
         }
@@ -3658,10 +3658,10 @@ var DomainGfx = (function (t) {
       }
       function Mt(t) {
         if (null != At) return At;
-        var e = L(t, document.createTextNode('AخA')),
+        var e = O(t, document.createTextNode('AخA')),
           r = T(e, 0, 1).getBoundingClientRect(),
           n = T(e, 1, 2).getBoundingClientRect();
-        return O(t), !(!r || r.left == r.right) && (At = n.right - r.right < 3);
+        return L(t), !(!r || r.left == r.right) && (At = n.right - r.right < 3);
       }
       var Et,
         _t =
@@ -4330,7 +4330,7 @@ var DomainGfx = (function (t) {
                   ((v.from = c), u && (s || (s = [])).push(v))
                 : ((v.from += c), u && (s || (s = [])).push(v));
           }
-        s && (s = Oe(s)), l && l != s && (l = Oe(l));
+        s && (s = Le(s)), l && l != s && (l = Le(l));
         var g = [s];
         if (!u) {
           var m,
@@ -4344,7 +4344,7 @@ var DomainGfx = (function (t) {
         }
         return g;
       }
-      function Oe(t) {
+      function Le(t) {
         for (var e = 0; e < t.length; ++e) {
           var r = t[e];
           null != r.from &&
@@ -4354,7 +4354,7 @@ var DomainGfx = (function (t) {
         }
         return t.length ? t : null;
       }
-      function Le(t) {
+      function Oe(t) {
         var e = t.markedSpans;
         if (e) {
           for (var r = 0; r < e.length; ++r) e[r].marker.detachLine(t);
@@ -4534,7 +4534,7 @@ var DomainGfx = (function (t) {
         (this.text = t), Me(this, e), (this.height = r ? r(this) : 1);
       };
       function $e(t) {
-        (t.parent = null), Le(t);
+        (t.parent = null), Oe(t);
       }
       (qe.prototype.lineNo = function () {
         return Xt(this);
@@ -4575,7 +4575,7 @@ var DomainGfx = (function (t) {
               o.styleClasses.textClass &&
                 (n.textClass = j(o.styleClasses.textClass, n.textClass || ''))),
             0 == n.map.length &&
-              n.map.push(0, 0, n.content.appendChild(Lt(t.display.measure))),
+              n.map.push(0, 0, n.content.appendChild(Ot(t.display.measure))),
             0 == i
               ? ((e.measure.map = n.map), (e.measure.cache = {}))
               : ((e.measure.maps || (e.measure.maps = [])).push(n.map),
@@ -4778,24 +4778,24 @@ var DomainGfx = (function (t) {
             if (p >= d) break;
             for (var A = Math.min(d, m); ; ) {
               if (g) {
-                var O = p + g.length;
+                var L = p + g.length;
                 if (!f) {
-                  var L = O > A ? g.slice(0, A - p) : g;
+                  var O = L > A ? g.slice(0, A - p) : g;
                   e.addToken(
                     e,
-                    L,
+                    O,
                     a ? a + l : l,
                     c,
-                    p + L.length == m ? u : '',
+                    p + O.length == m ? u : '',
                     s,
                     h
                   );
                 }
-                if (O >= A) {
+                if (L >= A) {
                   (g = g.slice(A - p)), (p = A);
                   break;
                 }
-                (p = O), (c = '');
+                (p = L), (c = '');
               }
               (g = i.slice(o, (o = r[v++]))), (a = Xe(r[v++], e.cm.options));
             }
@@ -5058,7 +5058,7 @@ var DomainGfx = (function (t) {
             (r += 'margin-left: -' + e.display.gutters.offsetWidth + 'px;'),
             t.noHScroll &&
               (r += 'width: ' + e.display.wrapper.clientWidth + 'px;'),
-            L(e.display.measure, M('div', [t.node], null, r));
+            O(e.display.measure, M('div', [t.node], null, r));
         }
         return (t.height = t.node.parentNode.offsetHeight);
       }
@@ -5079,7 +5079,7 @@ var DomainGfx = (function (t) {
       }
       function kr(t) {
         if (t.cachedPaddingH) return t.cachedPaddingH;
-        var e = L(t.measure, M('pre', 'x', 'CodeMirror-line-like')),
+        var e = O(t.measure, M('pre', 'x', 'CodeMirror-line-like')),
           r = window.getComputedStyle
             ? window.getComputedStyle(e)
             : e.currentStyle,
@@ -5095,10 +5095,10 @@ var DomainGfx = (function (t) {
       function Ar(t) {
         return t.display.scroller.clientWidth - Tr(t) - t.display.barWidth;
       }
-      function Or(t) {
+      function Lr(t) {
         return t.display.scroller.clientHeight - Tr(t) - t.display.barHeight;
       }
-      function Lr(t, e, r) {
+      function Or(t, e, r) {
         if (t.line == e) return { map: t.measure.map, cache: t.measure.cache };
         for (var n = 0; n < t.rest.length; n++)
           if (t.rest[n] == e)
@@ -5132,9 +5132,9 @@ var DomainGfx = (function (t) {
                 n = (t.display.externalMeasured = new nr(t.doc, e, r));
               n.lineN = r;
               var i = (n.built = Je(t, n));
-              return (n.text = i.pre), L(t.display.lineMeasure, i.pre), n;
+              return (n.text = i.pre), O(t.display.lineMeasure, i.pre), n;
             })(t, e));
-        var i = Lr(n, e, r);
+        var i = Or(n, e, r);
         return {
           line: e,
           view: n,
@@ -5213,7 +5213,7 @@ var DomainGfx = (function (t) {
                         screen.logicalXDPI == screen.deviceXDPI ||
                         !(function (t) {
                           if (null != jt) return jt;
-                          var e = L(t, M('span', 'x')),
+                          var e = O(t, M('span', 'x')),
                             r = e.getBoundingClientRect(),
                             n = T(e, 0, 1).getBoundingClientRect();
                           return (jt = Math.abs(r.left - n.left) > 1);
@@ -5339,7 +5339,7 @@ var DomainGfx = (function (t) {
           for (var e = 0; e < t.rest.length; e++) t.measure.caches[e] = {};
       }
       function Fr(t) {
-        (t.display.externalMeasure = null), O(t.display.lineMeasure);
+        (t.display.externalMeasure = null), L(t.display.lineMeasure);
         for (var e = 0; e < t.display.view.length; e++) Dr(t.display.view[e]);
       }
       function Wr(t) {
@@ -5610,15 +5610,15 @@ var DomainGfx = (function (t) {
               Ir.appendChild(M('br'));
           Ir.appendChild(document.createTextNode('x'));
         }
-        L(t.measure, Ir);
+        O(t.measure, Ir);
         var r = Ir.offsetHeight / 50;
-        return r > 3 && (t.cachedTextHeight = r), O(t.measure), r || 1;
+        return r > 3 && (t.cachedTextHeight = r), L(t.measure), r || 1;
       }
       function nn(t) {
         if (null != t.cachedCharWidth) return t.cachedCharWidth;
         var e = M('span', 'xxxxxxxxxx'),
           r = M('pre', [e], 'CodeMirror-line-like');
-        L(t.measure, r);
+        O(t.measure, r);
         var n = e.getBoundingClientRect(),
           i = (n.right - n.left) / 10;
         return i > 2 && (t.cachedCharWidth = i), i || 10;
@@ -5937,19 +5937,19 @@ var DomainGfx = (function (t) {
                   T = C ? l : (g ? y : m).right;
                 c(k, m.top, T - k, m.bottom);
               } else {
-                var A, O, L, M;
+                var A, L, O, M;
                 g
                   ? ((A = u && b && x ? s : m.left),
-                    (O = u ? l : p(t, i, 'before')),
-                    (L = u ? s : p(e, i, 'after')),
+                    (L = u ? l : p(t, i, 'before')),
+                    (O = u ? s : p(e, i, 'after')),
                     (M = u && w && S ? l : y.right))
                   : ((A = u ? p(t, i, 'before') : s),
-                    (O = !u && b && x ? l : m.right),
-                    (L = !u && w && S ? s : y.left),
+                    (L = !u && b && x ? l : m.right),
+                    (O = !u && w && S ? s : y.left),
                     (M = u ? p(e, i, 'after') : l)),
-                  c(A, m.top, O - A, m.bottom),
+                  c(A, m.top, L - A, m.bottom),
                   m.bottom < y.top && c(s, m.bottom, null, y.top),
-                  c(L, y.top, M - L, y.bottom);
+                  c(O, y.top, M - O, y.bottom);
               }
               (!o || bn(m, o) < 0) && (o = m),
                 bn(y, o) < 0 && (o = y),
@@ -6059,9 +6059,9 @@ var DomainGfx = (function (t) {
             var h = i.line.height - l;
             if (
               (h > 0.005 || h < -0.005) &&
-              (Kt(i.line, l), On(i.line), i.rest)
+              (Kt(i.line, l), Ln(i.line), i.rest)
             )
-              for (var d = 0; d < i.rest.length; d++) On(i.rest[d]);
+              for (var d = 0; d < i.rest.length; d++) Ln(i.rest[d]);
             if (u > t.display.sizerWidth) {
               var p = Math.ceil(u / nn(t.display));
               p > t.display.maxLineLength &&
@@ -6072,7 +6072,7 @@ var DomainGfx = (function (t) {
           }
         }
       }
-      function On(t) {
+      function Ln(t) {
         if (t.widgets)
           for (var e = 0; e < t.widgets.length; ++e) {
             var r = t.widgets[e],
@@ -6080,7 +6080,7 @@ var DomainGfx = (function (t) {
             n && (r.height = n.offsetHeight);
           }
       }
-      function Ln(t, e, r) {
+      function On(t, e, r) {
         var n = r && null != r.top ? Math.max(0, r.top) : t.scroller.scrollTop;
         n = Math.floor(n - Sr(t));
         var i = r && null != r.bottom ? r.bottom : n + t.wrapper.clientHeight,
@@ -6104,7 +6104,7 @@ var DomainGfx = (function (t) {
             t.curOp && null != t.curOp.scrollTop
               ? t.curOp.scrollTop
               : r.scroller.scrollTop,
-          o = Or(t),
+          o = Lr(t),
           a = {};
         e.bottom - e.top > o && (e.bottom = e.top + o);
         var s = t.doc.height + Cr(r),
@@ -6727,7 +6727,7 @@ var DomainGfx = (function (t) {
       var oi = function (t, e, r) {
         var n = t.display;
         (this.viewport = e),
-          (this.visible = Ln(n, t.doc, e)),
+          (this.visible = On(n, t.doc, e)),
           (this.editorIsHidden = !n.wrapper.offsetWidth),
           (this.wrapperHeight = n.wrapper.clientHeight),
           (this.wrapperWidth = n.wrapper.clientWidth),
@@ -6829,7 +6829,7 @@ var DomainGfx = (function (t) {
                 h.changes &&
                   (z(h.changes, 'gutter') > -1 && (d = !1), ur(t, h, c, r)),
                   d &&
-                    (O(h.lineNumber),
+                    (L(h.lineNumber),
                     h.lineNumber.appendChild(
                       document.createTextNode(Qt(t.options, c))
                     )),
@@ -6864,8 +6864,8 @@ var DomainGfx = (function (t) {
                 e.extend(t.focusNode, t.focusOffset);
             }
           })(c),
-          O(r.cursorDiv),
-          O(r.selectionDiv),
+          L(r.cursorDiv),
+          L(r.selectionDiv),
           (r.gutters.style.height = r.sizer.style.minHeight = 0),
           s &&
             ((r.lastWrapHeight = e.wrapperHeight),
@@ -6878,14 +6878,14 @@ var DomainGfx = (function (t) {
       function si(t, e) {
         for (var r = e.viewport, n = !0; ; n = !1) {
           if (n && t.options.lineWrapping && e.oldDisplayWidth != Ar(t))
-            n && (e.visible = Ln(t.display, t.doc, r));
+            n && (e.visible = On(t.display, t.doc, r));
           else if (
             (r &&
               null != r.top &&
               (r = {
-                top: Math.min(t.doc.height + Cr(t.display) - Or(t), r.top),
+                top: Math.min(t.doc.height + Cr(t.display) - Lr(t), r.top),
               }),
-            (e.visible = Ln(t.display, t.doc, r)),
+            (e.visible = On(t.display, t.doc, r)),
             e.visible.from >= t.display.viewFrom &&
               e.visible.to <= t.display.viewTo)
           )
@@ -7000,7 +7000,7 @@ var DomainGfx = (function (t) {
       function pi(t) {
         var e = t.gutters,
           r = t.gutterSpecs;
-        O(e), (t.lineGutter = null);
+        L(e), (t.lineGutter = null);
         for (var n = 0; n < r.length; ++n) {
           var i = r[n],
             o = i.className,
@@ -7244,17 +7244,17 @@ var DomainGfx = (function (t) {
             )
           : t.to;
       }
-      function Oi(t, e) {
+      function Li(t, e) {
         if (ee(t, e.from) < 0) return t;
         if (ee(t, e.to) <= 0) return Ai(e);
         var r = t.line + e.text.length - (e.to.line - e.from.line) - 1,
           n = t.ch;
         return t.line == e.to.line && (n += Ai(e).ch - e.to.ch), te(r, n);
       }
-      function Li(t, e) {
+      function Oi(t, e) {
         for (var r = [], n = 0; n < t.sel.ranges.length; n++) {
           var i = t.sel.ranges[n];
-          r.push(new Ci(Oi(i.anchor, e), Oi(i.head, e)));
+          r.push(new Ci(Li(i.anchor, e), Li(i.head, e)));
         }
         return ki(t.cm, r, t.sel.primIndex);
       }
@@ -7293,7 +7293,7 @@ var DomainGfx = (function (t) {
               t.stateAfter && (t.stateAfter = null),
               t.styles && (t.styles = null),
               null != t.order && (t.order = null),
-              Le(t),
+              Oe(t),
               Me(t, r);
             var i = n ? n(t) : 1;
             i != t.height && Kt(t, i);
@@ -7768,7 +7768,7 @@ var DomainGfx = (function (t) {
       }
       function co(t, e) {
         if (1 != e.text.length || '' != e.text[0] || 0 != ee(e.from, e.to)) {
-          var r = Li(t, e);
+          var r = Oi(t, e);
           zi(t, e, r, t.cm ? t.cm.curOp.id : NaN), po(t, e, r, Ae(t, e));
           var n = [];
           ji(t, function (t, r) {
@@ -7813,7 +7813,7 @@ var DomainGfx = (function (t) {
                   if (((n.origin = e), f && !lo(t, n, !1)))
                     return (s.length = 0), {};
                   c.push(Fi(t, n));
-                  var o = r ? Li(t, n) : Y(s);
+                  var o = r ? Oi(t, n) : Y(s);
                   po(t, n, o, Gi(t, n)),
                     !r &&
                       t.cm &&
@@ -7880,7 +7880,7 @@ var DomainGfx = (function (t) {
               origin: e.origin,
             }),
             (e.removed = $t(t, e.from, e.to)),
-            r || (r = Li(t, e)),
+            r || (r = Oi(t, e)),
             t.cm
               ? (function (t, e, r) {
                   var n = t.doc,
@@ -8203,7 +8203,7 @@ var DomainGfx = (function (t) {
                   if (t.linked[l].isParent) return;
                 a = Y(o);
               }),
-              new Oo(o, a)
+              new Lo(o, a)
             );
           })(t, e, r, n, i);
         if (t.cm && !t.cm.curOp) return ti(t.cm, Ao)(t, e, r, n, i);
@@ -8384,11 +8384,11 @@ var DomainGfx = (function (t) {
           }
         }),
         yt(To);
-      var Oo = function (t, e) {
+      var Lo = function (t, e) {
         (this.markers = t), (this.primary = e);
         for (var r = 0; r < t.length; ++r) t[r].parent = this;
       };
-      function Lo(t) {
+      function Oo(t) {
         return t.findMarks(
           te(t.first, 0),
           t.clipPos(te(t.lastLine())),
@@ -8417,17 +8417,17 @@ var DomainGfx = (function (t) {
         )
           e(r);
       }
-      (Oo.prototype.clear = function () {
+      (Lo.prototype.clear = function () {
         if (!this.explicitlyCleared) {
           this.explicitlyCleared = !0;
           for (var t = 0; t < this.markers.length; ++t) this.markers[t].clear();
           sr(this, 'clear');
         }
       }),
-        (Oo.prototype.find = function (t, e) {
+        (Lo.prototype.find = function (t, e) {
           return this.primary.find(t, e);
         }),
-        yt(Oo);
+        yt(Lo);
       var Eo = 0,
         _o = function (t, e, r, n, i) {
           if (!(this instanceof _o)) return new _o(t, e, r, n, i);
@@ -8940,15 +8940,15 @@ var DomainGfx = (function (t) {
                   n.markers.push(s), (s.parent = n);
                 }
               }
-            })(n, Lo(this)),
+            })(n, Oo(this)),
             n
           );
         },
         unlinkDoc: function (t) {
-          if ((t instanceof Oa && (t = t.doc), this.linked))
+          if ((t instanceof La && (t = t.doc), this.linked))
             for (var e = 0; e < this.linked.length; ++e)
               if (this.linked[e].doc == t) {
-                this.linked.splice(e, 1), t.unlinkDoc(this), Mo(Lo(this));
+                this.linked.splice(e, 1), t.unlinkDoc(this), Mo(Oo(this));
                 break;
               }
           if (t.history == this.history) {
@@ -9938,7 +9938,7 @@ var DomainGfx = (function (t) {
                           })(t, r, n),
                           u = t.doc.sel;
                         t.options.dragDrop &&
-                        Ot &&
+                        Lt &&
                         !t.isReadOnly() &&
                         'single' == r &&
                         (i = u.contains(e)) > -1 &&
@@ -10164,7 +10164,7 @@ var DomainGfx = (function (t) {
                                         if (s)
                                           if (0 != ee(s, h)) {
                                             (t.curOp.focus = N()), d(s);
-                                            var l = Ln(i, o);
+                                            var l = On(i, o);
                                             (s.line >= l.to ||
                                               s.line < l.from) &&
                                               setTimeout(
@@ -10295,16 +10295,16 @@ var DomainGfx = (function (t) {
             return Bn(t);
           }, 100);
       }
-      function Oa(t, e) {
+      function La(t, e) {
         var r = this;
-        if (!(this instanceof Oa)) return new Oa(t, e);
+        if (!(this instanceof La)) return new La(t, e);
         (this.options = e = e ? D(e) : {}), D(Ca, e, !1);
         var n = e.value;
         'string' == typeof n
           ? (n = new _o(n, e.mode, null, e.lineSeparator, e.direction))
           : e.mode && (n.modeOption = e.mode),
           (this.doc = n);
-        var i = new Oa.inputStyles[e.inputStyle](this),
+        var i = new La.inputStyles[e.inputStyle](this),
           o = (this.display = new gi(t, n, i, e));
         for (var u in ((o.wrapper.CodeMirror = this),
         xa(this),
@@ -10460,7 +10460,7 @@ var DomainGfx = (function (t) {
                             t.display.dragCursor,
                             t.display.cursorDiv
                           )),
-                        L(t.display.dragCursor, n);
+                        O(t.display.dragCursor, n);
                     }
                   })(t, e),
                   St(e));
@@ -10523,15 +10523,15 @@ var DomainGfx = (function (t) {
         ka))
           ka.hasOwnProperty(u) && ka[u](this, e[u], Sa);
         hi(this), e.finishInit && e.finishInit(this);
-        for (var c = 0; c < La.length; ++c) La[c](this);
+        for (var c = 0; c < Oa.length; ++c) Oa[c](this);
         $n(this),
           l &&
             e.lineWrapping &&
             'optimizelegibility' == getComputedStyle(o.lineDiv).textRendering &&
             (o.lineDiv.style.textRendering = 'auto');
       }
-      (Oa.defaults = Ca), (Oa.optionHandlers = ka);
-      var La = [];
+      (La.defaults = Ca), (La.optionHandlers = ka);
+      var Oa = [];
       function Ma(t, e, r, n) {
         var i,
           o = t.doc;
@@ -10580,8 +10580,8 @@ var DomainGfx = (function (t) {
           }
         }
       }
-      Oa.defineInitHook = function (t) {
-        return La.push(t);
+      La.defineInitHook = function (t) {
+        return Oa.push(t);
       };
       var Ea = null;
       function _a(t) {
@@ -10883,7 +10883,7 @@ var DomainGfx = (function (t) {
         var r = Er(t, e.line);
         if (!r || r.hidden) return null;
         var n = qt(t.doc, e.line),
-          i = Lr(r, n, e.line),
+          i = Or(r, n, e.line),
           o = ut(n, t.doc.direction),
           a = 'left';
         o && (a = st(o, e.ch) % 2 ? 'right' : 'left');
@@ -11129,8 +11129,8 @@ var DomainGfx = (function (t) {
             }, 20));
         }),
         (za.prototype.showMultipleSelections = function (t) {
-          L(this.cm.display.cursorDiv, t.cursors),
-            L(this.cm.display.selectionDiv, t.selection);
+          O(this.cm.display.cursorDiv, t.cursors),
+            O(this.cm.display.selectionDiv, t.selection);
         }),
         (za.prototype.rememberSelection = function () {
           var t = this.getSelection();
@@ -11514,8 +11514,8 @@ var DomainGfx = (function (t) {
         }),
         (Ga.prototype.showSelection = function (t) {
           var e = this.cm.display;
-          L(e.cursorDiv, t.cursors),
-            L(e.selectionDiv, t.selection),
+          O(e.cursorDiv, t.cursors),
+            O(e.selectionDiv, t.selection),
             null != t.teTop &&
               ((this.wrapper.style.top = t.teTop + 'px'),
               (this.wrapper.style.left = t.teLeft + 'px'));
@@ -11970,7 +11970,7 @@ var DomainGfx = (function (t) {
               !0
             ),
             r('phrases', null);
-        })(Oa),
+        })(La),
         (function (t) {
           var e = t.optionHandlers,
             r = (t.helpers = {});
@@ -12362,7 +12362,7 @@ var DomainGfx = (function (t) {
                 top: t.scrollTop,
                 height: t.scrollHeight - Tr(this) - this.display.barHeight,
                 width: t.scrollWidth - Tr(this) - this.display.barWidth,
-                clientHeight: Or(this),
+                clientHeight: Lr(this),
                 clientWidth: Ar(this),
               };
             },
@@ -12465,41 +12465,41 @@ var DomainGfx = (function (t) {
             (t.registerGlobalHelper = function (e, n, i, o) {
               t.registerHelper(e, n, o), r[e]._global.push({ pred: i, val: o });
             });
-        })(Oa);
+        })(La);
       var qa = 'iter insert remove copy getEditor constructor'.split(' ');
       for (var $a in _o.prototype)
         _o.prototype.hasOwnProperty($a) &&
           z(qa, $a) < 0 &&
-          (Oa.prototype[$a] = (function (t) {
+          (La.prototype[$a] = (function (t) {
             return function () {
               return t.apply(this.doc, arguments);
             };
           })(_o.prototype[$a]));
       return (
         yt(_o),
-        (Oa.inputStyles = { textarea: Ga, contenteditable: za }),
-        (Oa.defineMode = function (t) {
-          Oa.defaults.mode || 'null' == t || (Oa.defaults.mode = t),
+        (La.inputStyles = { textarea: Ga, contenteditable: za }),
+        (La.defineMode = function (t) {
+          La.defaults.mode || 'null' == t || (La.defaults.mode = t),
             Dt.apply(this, arguments);
         }),
-        (Oa.defineMIME = function (t, e) {
+        (La.defineMIME = function (t, e) {
           Rt[t] = e;
         }),
-        Oa.defineMode('null', function () {
+        La.defineMode('null', function () {
           return {
             token: function (t) {
               return t.skipToEnd();
             },
           };
         }),
-        Oa.defineMIME('text/plain', 'null'),
-        (Oa.defineExtension = function (t, e) {
-          Oa.prototype[t] = e;
+        La.defineMIME('text/plain', 'null'),
+        (La.defineExtension = function (t, e) {
+          La.prototype[t] = e;
         }),
-        (Oa.defineDocExtension = function (t, e) {
+        (La.defineDocExtension = function (t, e) {
           _o.prototype[t] = e;
         }),
-        (Oa.fromTextArea = function (t, e) {
+        (La.fromTextArea = function (t, e) {
           if (
             (((e = e ? D(e) : {}).value = t.value),
             !e.tabindex && t.tabIndex && (e.tabindex = t.tabIndex),
@@ -12542,7 +12542,7 @@ var DomainGfx = (function (t) {
               });
           }),
             (t.style.display = 'none');
-          var s = Oa(function (e) {
+          var s = La(function (e) {
             return t.parentNode.insertBefore(e, t.nextSibling);
           }, e);
           return s;
@@ -12579,7 +12579,7 @@ var DomainGfx = (function (t) {
             (t.lookupKey = qo),
             (t.normalizeKeyMap = Go),
             (t.StringStream = Gt),
-            (t.SharedTextMarker = Oo),
+            (t.SharedTextMarker = Lo),
             (t.TextMarker = To),
             (t.LineWidget = So),
             (t.e_preventDefault = bt),
@@ -12589,9 +12589,9 @@ var DomainGfx = (function (t) {
             (t.contains = _),
             (t.rmClass = A),
             (t.keyNames = Wo);
-        })(Oa),
-        (Oa.version = '5.58.3'),
-        Oa
+        })(La),
+        (La.version = '5.58.3'),
+        La
       );
     })();
   },
@@ -13178,8 +13178,8 @@ var DomainGfx = (function (t) {
           for (var C, k = '', T = 0, A = 0; A < x.length; A++) {
             S = x[A];
             for (
-              var O = String(S[0]),
-                L = f(h(s(S.index), d.length), 0),
+              var L = String(S[0]),
+                O = f(h(s(S.index), d.length), 0),
                 M = [],
                 E = 1;
               E < S.length;
@@ -13188,11 +13188,11 @@ var DomainGfx = (function (t) {
               M.push(void 0 === (C = S[E]) ? C : String(C));
             var _ = S.groups;
             if (p) {
-              var N = [O].concat(M, L, d);
+              var N = [L].concat(M, O, d);
               void 0 !== _ && N.push(_);
               var I = String(n.apply(void 0, N));
-            } else I = b(O, d, L, M, _, n);
-            L >= T && ((k += d.slice(T, L) + I), (T = L + O.length));
+            } else I = b(L, d, O, M, _, n);
+            O >= T && ((k += d.slice(T, O) + I), (T = O + L.length));
           }
           return k + d.slice(T);
         },
@@ -13885,8 +13885,8 @@ var DomainGfx = (function (t) {
       k = x('iterator'),
       T = c.set,
       A = c.getterFor('URLSearchParams'),
-      O = c.getterFor('URLSearchParamsIterator'),
-      L = /\+/g,
+      L = c.getterFor('URLSearchParamsIterator'),
+      O = /\+/g,
       M = Array(4),
       E = function (t) {
         return (
@@ -13901,7 +13901,7 @@ var DomainGfx = (function (t) {
         }
       },
       N = function (t) {
-        var e = t.replace(L, ' '),
+        var e = t.replace(O, ' '),
           r = 4;
         try {
           return decodeURIComponent(e);
@@ -13948,7 +13948,7 @@ var DomainGfx = (function (t) {
         },
         'Iterator',
         function () {
-          var t = O(this),
+          var t = L(this),
             e = t.kind,
             r = t.iterator.next(),
             n = r.value;
@@ -15382,7 +15382,7 @@ var DomainGfx = (function (t) {
             : ((t.done = !0), { value: n, done: !1 });
         }
       ),
-      O = function (t) {
+      L = function (t) {
         var e,
           r,
           n,
@@ -15421,7 +15421,7 @@ var DomainGfx = (function (t) {
               throw TypeError('`.matchAll` does not allow non-global regexes');
             if (T) return k.apply(i, arguments);
             if (
-              (void 0 === (r = t[b]) && y && 'RegExp' == u(t) && (r = O),
+              (void 0 === (r = t[b]) && y && 'RegExp' == u(t) && (r = L),
               null != r)
             )
               return s(r).call(t, i);
@@ -15429,12 +15429,12 @@ var DomainGfx = (function (t) {
           return (
             (e = String(i)),
             (n = new RegExp(t, 'g')),
-            y ? O.call(n, e) : n[b](e)
+            y ? L.call(n, e) : n[b](e)
           );
         },
       }
     ),
-      y || b in S || h(S, b, O);
+      y || b in S || h(S, b, L);
   },
   function (t, e, r) {
     'use strict';
@@ -16663,8 +16663,8 @@ var DomainGfx = (function (t) {
       k = r(172),
       T = r(173),
       A = r(321),
-      O = r(91),
-      L = r(125),
+      L = r(91),
+      O = r(125),
       M = r(17),
       E = r(60),
       _ = r(6),
@@ -16680,7 +16680,7 @@ var DomainGfx = (function (t) {
       B = u.document,
       H = u.process,
       U = c('fetch'),
-      V = O.f,
+      V = L.f,
       G = V,
       q = !!(B && B.createEvent && u.dispatchEvent),
       $ = 'function' == typeof PromiseRejectionEvent,
@@ -16764,7 +16764,7 @@ var DomainGfx = (function (t) {
             n = t.value;
           if (
             tt(t) &&
-            ((e = L(function () {
+            ((e = O(function () {
               N
                 ? H.emit('unhandledRejection', n, r)
                 : Z('unhandledrejection', r, n);
@@ -16860,7 +16860,7 @@ var DomainGfx = (function (t) {
           (this.resolve = rt(it, e)),
           (this.reject = rt(nt, e));
       }),
-      (O.f = V = function (t) {
+      (L.f = V = function (t) {
         return t === W || t === o ? new i(t) : G(t);
       }),
       l ||
@@ -16915,7 +16915,7 @@ var DomainGfx = (function (t) {
               r = V(e),
               n = r.resolve,
               i = r.reject,
-              o = L(function () {
+              o = O(function () {
                 var r = m(e.resolve),
                   o = [],
                   a = 0,
@@ -16937,7 +16937,7 @@ var DomainGfx = (function (t) {
             var e = this,
               r = V(e),
               n = r.reject,
-              i = L(function () {
+              i = O(function () {
                 var i = m(e.resolve);
                 w(t, function (t) {
                   i.call(e, t).then(r.resolve, n);
@@ -18131,8 +18131,8 @@ var DomainGfx = (function (t) {
       k = Math.floor,
       T = Math.pow,
       A = /[A-Za-z]/,
-      O = /[\d+-.A-Za-z]/,
-      L = /\d/,
+      L = /[\d+-.A-Za-z]/,
+      O = /\d/,
       M = /^(0x|0X)/,
       E = /^[0-7]+$/,
       _ = /^\d+$/,
@@ -18223,8 +18223,8 @@ var DomainGfx = (function (t) {
                   if (!('.' == h() && n < 4)) return;
                   f++;
                 }
-                if (!L.test(h())) return;
-                for (; L.test(h()); ) {
+                if (!O.test(h())) return;
+                for (; O.test(h()); ) {
                   if (((o = parseInt(h(), 10)), null === i)) i = o;
                   else {
                     if (0 == i) return;
@@ -18399,7 +18399,7 @@ var DomainGfx = (function (t) {
               (p += a.toLowerCase()), (c = et);
               break;
             case et:
-              if (a && (O.test(a) || '+' == a || '-' == a || '.' == a))
+              if (a && (L.test(a) || '+' == a || '-' == a || '.' == a))
                 p += a.toLowerCase();
               else {
                 if (':' != a) {
@@ -18571,7 +18571,7 @@ var DomainGfx = (function (t) {
               }
               break;
             case ht:
-              if (!L.test(a)) {
+              if (!O.test(a)) {
                 if (
                   a == n ||
                   '/' == a ||
@@ -18731,8 +18731,8 @@ var DomainGfx = (function (t) {
             ((n.href = kt.call(n)),
             (n.origin = Tt.call(n)),
             (n.protocol = At.call(n)),
-            (n.username = Ot.call(n)),
-            (n.password = Lt.call(n)),
+            (n.username = Lt.call(n)),
+            (n.password = Ot.call(n)),
             (n.host = Mt.call(n)),
             (n.hostname = Et.call(n)),
             (n.port = _t.call(n)),
@@ -18783,10 +18783,10 @@ var DomainGfx = (function (t) {
       At = function () {
         return C(this).scheme + ':';
       },
-      Ot = function () {
+      Lt = function () {
         return C(this).username;
       },
-      Lt = function () {
+      Ot = function () {
         return C(this).password;
       },
       Mt = function () {
@@ -18837,7 +18837,7 @@ var DomainGfx = (function (t) {
             var e = C(this);
             xt(e, String(t) + ':', tt);
           }),
-          username: Rt(Ot, function (t) {
+          username: Rt(Lt, function (t) {
             var e = C(this),
               r = d(String(t));
             if (!K(e)) {
@@ -18845,7 +18845,7 @@ var DomainGfx = (function (t) {
               for (var n = 0; n < r.length; n++) e.username += G(r[n], V);
             }
           }),
-          password: Rt(Lt, function (t) {
+          password: Rt(Ot, function (t) {
             var e = C(this),
               r = d(String(t));
             if (!K(e)) {
@@ -19672,9 +19672,9 @@ var DomainGfx = (function (t) {
                 if (r) {
                   if (r.block) {
                     var n = t(e, r.prev);
-                    return n ? (n == r.prev ? r : new L(n, r.vars, !0)) : null;
+                    return n ? (n == r.prev ? r : new O(n, r.vars, !0)) : null;
                   }
-                  return T(e, r.vars) ? r : new L(r.prev, new M(e, r.vars), !1);
+                  return T(e, r.vars) ? r : new O(r.prev, new M(e, r.vars), !1);
                 }
                 return null;
               })(t, e.context);
@@ -19685,7 +19685,7 @@ var DomainGfx = (function (t) {
             !T(t, e.globalVars) &&
             (e.globalVars = new M(t, e.globalVars));
         }
-        function O(t) {
+        function L(t) {
           return (
             'public' == t ||
             'private' == t ||
@@ -19694,7 +19694,7 @@ var DomainGfx = (function (t) {
             'readonly' == t
           );
         }
-        function L(t, e, r) {
+        function O(t, e, r) {
           (this.prev = t), (this.vars = e), (this.block = r);
         }
         function M(t, e) {
@@ -19702,11 +19702,11 @@ var DomainGfx = (function (t) {
         }
         var E = new M('this', new M('arguments', null));
         function _() {
-          (S.state.context = new L(S.state.context, S.state.localVars, !1)),
+          (S.state.context = new O(S.state.context, S.state.localVars, !1)),
             (S.state.localVars = E);
         }
         function N() {
-          (S.state.context = new L(S.state.context, S.state.localVars, !0)),
+          (S.state.context = new O(S.state.context, S.state.localVars, !0)),
             (S.state.localVars = null);
         }
         function I() {
@@ -19763,7 +19763,7 @@ var DomainGfx = (function (t) {
                 S.state.cc.pop()(),
               k(j('form'), B, D, P, kt))
             : 'function' == t
-            ? k(Lt)
+            ? k(Ot)
             : 'for' == t
             ? k(j('form'), Tt, D, P)
             : 'class' == t || (u && 'interface' == e)
@@ -19826,7 +19826,7 @@ var DomainGfx = (function (t) {
           return b.hasOwnProperty(t)
             ? k(i)
             : 'function' == t
-            ? k(Lt, i)
+            ? k(Ot, i)
             : 'class' == t || (u && 'interface' == e)
             ? ((S.marked = 'keyword'), k(j('form'), Nt, P))
             : 'keyword c' == t || 'async' == t
@@ -19939,7 +19939,7 @@ var DomainGfx = (function (t) {
             ? ((S.marked = s ? 'property' : S.style + ' property'), k(rt))
             : 'jsonld-keyword' == t
             ? k(rt)
-            : u && O(e)
+            : u && L(e)
             ? ((S.marked = 'keyword'), k(tt))
             : '[' == t
             ? k(W, at, R(']'), rt)
@@ -19953,10 +19953,10 @@ var DomainGfx = (function (t) {
           var r;
         }
         function et(t) {
-          return 'variable' != t ? C(rt) : ((S.marked = 'property'), k(Lt));
+          return 'variable' != t ? C(rt) : ((S.marked = 'property'), k(Ot));
         }
         function rt(t) {
-          return ':' == t ? k(z) : '(' == t ? C(Lt) : void 0;
+          return ':' == t ? k(z) : '(' == t ? C(Ot) : void 0;
         }
         function nt(t, e, r) {
           function n(i, o) {
@@ -20074,7 +20074,7 @@ var DomainGfx = (function (t) {
             : C(bt, at, St, Ct);
         }
         function bt(t, e) {
-          return u && O(e)
+          return u && L(e)
             ? ((S.marked = 'keyword'), k(bt))
             : 'variable' == t
             ? (A(e), k())
@@ -20115,26 +20115,26 @@ var DomainGfx = (function (t) {
           return 'await' == e ? k(Tt) : '(' == t ? k(j(')'), At, P) : void 0;
         }
         function At(t) {
-          return 'var' == t ? k(yt, Ot) : 'variable' == t ? k(Ot) : C(Ot);
+          return 'var' == t ? k(yt, Lt) : 'variable' == t ? k(Lt) : C(Lt);
         }
-        function Ot(t, e) {
+        function Lt(t, e) {
           return ')' == t
             ? k()
             : ';' == t
-            ? k(Ot)
+            ? k(Lt)
             : 'in' == e || 'of' == e
-            ? ((S.marked = 'keyword'), k(W, Ot))
-            : C(W, Ot);
+            ? ((S.marked = 'keyword'), k(W, Lt))
+            : C(W, Lt);
         }
-        function Lt(t, e) {
+        function Ot(t, e) {
           return '*' == e
-            ? ((S.marked = 'keyword'), k(Lt))
+            ? ((S.marked = 'keyword'), k(Ot))
             : 'variable' == t
-            ? (A(e), k(Lt))
+            ? (A(e), k(Ot))
             : '(' == t
             ? k(_, j(')'), nt(_t, ')'), P, lt, D, I)
             : u && '<' == e
-            ? k(j('>'), nt(gt, '>'), P, Lt)
+            ? k(j('>'), nt(gt, '>'), P, Ot)
             : void 0;
         }
         function Mt(t, e) {
@@ -20160,7 +20160,7 @@ var DomainGfx = (function (t) {
             '@' == e && k(W, _t),
             'spread' == t
               ? k(_t)
-              : u && O(e)
+              : u && L(e)
               ? ((S.marked = 'keyword'), k(_t))
               : u && 'this' == t
               ? k(at, St)
@@ -20185,7 +20185,7 @@ var DomainGfx = (function (t) {
         function Pt(t, e) {
           return 'async' == t ||
             ('variable' == t &&
-              ('static' == e || 'get' == e || 'set' == e || (u && O(e))) &&
+              ('static' == e || 'get' == e || 'set' == e || (u && L(e))) &&
               S.stream.match(/^\s+[\w$\xa1-\uffff]/, !1))
             ? ((S.marked = 'keyword'), k(Pt))
             : 'variable' == t || 'keyword' == S.style
@@ -20211,7 +20211,7 @@ var DomainGfx = (function (t) {
           if (':' == t) return k(ct, St);
           if ('=' == e) return k(z);
           var r = S.state.lexical.prev;
-          return C(r && 'interface' == r.info ? Mt : Lt);
+          return C(r && 'interface' == r.info ? Mt : Ot);
         }
         function Dt(t, e) {
           return '*' == e
@@ -20278,7 +20278,7 @@ var DomainGfx = (function (t) {
                 cc: [],
                 lexical: new w((t || 0) - o, 0, 'block', !1),
                 localVars: r.localVars,
-                context: r.localVars && new L(null, null, !1),
+                context: r.localVars && new O(null, null, !1),
                 indented: t || 0,
               };
               return (
@@ -20495,18 +20495,18 @@ var DomainGfx = (function (t) {
         return n && (e ? (t[k] = r) : delete t[k]), i;
       },
       A = Object.prototype.toString;
-    var O = function (t) {
+    var L = function (t) {
         return A.call(t);
       },
-      L = w ? w.toStringTag : void 0;
+      O = w ? w.toStringTag : void 0;
     var M = function (t) {
       return null == t
         ? void 0 === t
           ? '[object Undefined]'
           : '[object Null]'
-        : L && L in Object(t)
+        : O && O in Object(t)
         ? T(t)
-        : O(t);
+        : L(t);
     };
     var E = function (t) {
       var e = typeof t;
@@ -20730,18 +20730,18 @@ var DomainGfx = (function (t) {
           return (t.prototype = void 0), r;
         };
       })();
-    var Ot = (function (t, e) {
+    var Lt = (function (t, e) {
         return function (r) {
           return t(e(r));
         };
       })(Object.getPrototypeOf, Object),
-      Lt = Object.prototype;
+      Ot = Object.prototype;
     var Mt = function (t) {
       var e = t && t.constructor;
-      return t === (('function' == typeof e && e.prototype) || Lt);
+      return t === (('function' == typeof e && e.prototype) || Ot);
     };
     var Et = function (t) {
-      return 'function' != typeof t.constructor || Mt(t) ? {} : At(Ot(t));
+      return 'function' != typeof t.constructor || Mt(t) ? {} : At(Lt(t));
     };
     var _t = function (t) {
       return null != t && 'object' == typeof t;
@@ -20781,7 +20781,7 @@ var DomainGfx = (function (t) {
       qt = Vt.call(Object);
     var $t = function (t) {
         if (!_t(t) || '[object Object]' != M(t)) return !1;
-        var e = Ot(t);
+        var e = Lt(t);
         if (null === e) return !0;
         var r = Gt.call(e, 'constructor') && e.constructor;
         return 'function' == typeof r && r instanceof r && Vt.call(r) == qt;
@@ -21031,11 +21031,11 @@ var DomainGfx = (function (t) {
       })(function (t, e, r) {
         ve(t, e, r);
       }),
-      Oe = (r(34), r(49), r(63), r(71), 0),
-      Le = function () {
-        return 'domain-gfx-id-'.concat(++Oe);
+      Le = (r(34), r(49), r(63), r(71), 0),
+      Oe = function () {
+        return 'domain-gfx-id-'.concat(++Le);
       },
-      Me = window && window.Symbol ? Symbol('lib namespace') : '_'.concat(Le()),
+      Me = window && window.Symbol ? Symbol('lib namespace') : '_'.concat(Oe()),
       Ee = function (t) {
         return {
           set: function (e, r) {
@@ -21162,71 +21162,50 @@ var DomainGfx = (function (t) {
               (e._current = ze(
                 (function (t) {
                   var e,
-                    r = Ne(Ne({}, t), t.metadata || {}),
-                    n = r.identifier || r.type || r.accession || '',
-                    i = r.accession || '',
-                    o = r.description,
-                    a = r.database || r.source,
-                    s = r.start,
-                    l = r.targetStart || r.tStart || r.tstart,
-                    u = r.targetEnd || r.tEnd || r.tend,
-                    c = r.queryStart || r.qStart || r.qstart,
-                    f = r.queryEnd || r.qEnd || r.qend;
-                  if (r.end) {
-                    var h = r.end - r.start,
-                      d = r.aliStart || r.start,
-                      p = r.aliEnd || r.end,
-                      v = 0;
-                    d - r.start > 0 && (v = ((d - r.start) / h) * 100),
-                      (e = '\n      '
+                    r,
+                    n = Ne(Ne({}, t), t.metadata || {}),
+                    i = n.identifier || n.type || n.accession || '',
+                    o = n.accession || '',
+                    a = n.description,
+                    s = n.database || n.source,
+                    l = n.start,
+                    u = n.targetStart || n.tStart || n.tstart,
+                    c = n.targetEnd || n.tEnd || n.tend,
+                    f = n.queryStart || n.qStart || n.qstart,
+                    h = n.queryEnd || n.qEnd || n.qend;
+                  if (
+                    (n.start &&
+                      n.end &&
+                      ((e = ''.concat(n.start, ' - ').concat(n.end)),
+                      n.aliStart &&
+                        n.aliEnd &&
+                        (e += ' (alignment region '
+                          .concat(n.aliStart, ' - ')
+                          .concat(n.aliEnd, ')'))),
+                    n.modelStart)
+                  ) {
+                    var d = 0;
+                    n.modelStart > 1 &&
+                      (d = (100 * (n.modelStart - 1)) / n.modelLength),
+                      (r = '\n      1<span style="width: 100px;" class="domain">\n        <span class="alignment" style="\n          width: '
                         .concat(
-                          r.start,
-                          '<span style="width: 100px;" class="domain">\n        <span class="alignment" style="\n          width: '
-                        )
-                        .concat(
-                          (100 * (p - d)) / h,
+                          (100 * (n.modelEnd - n.modelStart + 1)) /
+                            n.modelLength,
                           'px;\n          margin-left: '
                         )
-                        .concat(v, 'px;\n          background-color: ')
-                        .concat(r.color, ';\n        "></span>\n      </span>')
-                        .concat(r.end, '\n    '));
+                        .concat(d, 'px;\n          background-color: ')
+                        .concat(n.color, ';\n        "></span>\n      </span>')
+                        .concat(n.end, '\n    '));
                   }
                   return '\n    <table>\n      <thead>\n        <tr>\n          <th colspan="2">\n            '
-                    .concat(n || (l && 'Match coordinates'), '\n            ')
+                    .concat(i || (u && 'Match coordinates'), '\n            ')
                     .concat(
-                      i && i !== n ? ' ('.concat(i, ')') : '',
+                      o && o !== i ? ' ('.concat(o, ')') : '',
                       '\n          </th>\n        </tr>\n      </thead>\n      <tbody>\n        '
                     )
                     .concat(
-                      o
-                        ? '\n        <tr>\n          <td>Description:</td>\n          <td>'.concat(
-                            o,
-                            '</td>\n        </tr>\n        '
-                          )
-                        : '',
-                      '\n        '
-                    )
-                    .concat(
-                      e
-                        ? '\n        <tr>\n          <td>Coordinates:</td>\n          <td class="coordinates">'.concat(
-                            e,
-                            '</td>\n        </tr>\n        '
-                          )
-                        : '',
-                      '\n        '
-                    )
-                    .concat(
-                      !e && s
-                        ? '\n        <tr>\n          <td>Position:</td>\n          <td>'.concat(
-                            s,
-                            '</td>\n        </tr>\n        '
-                          )
-                        : '',
-                      '\n        '
-                    )
-                    .concat(
                       a
-                        ? '\n        <tr>\n          <td>Source:</td>\n          <td>'.concat(
+                        ? '\n        <tr>\n          <td>Description:</td>\n          <td>'.concat(
                             a,
                             '</td>\n        </tr>\n        '
                           )
@@ -21234,22 +21213,58 @@ var DomainGfx = (function (t) {
                       '\n        '
                     )
                     .concat(
-                      l
+                      e
+                        ? '\n        <tr>\n          <td>Coordinates:</td>\n          <td>'.concat(
+                            e,
+                            '</td>\n        </tr>\n        '
+                          )
+                        : '',
+                      '\n        '
+                    )
+                    .concat(
+                      r
+                        ? '\n        <tr>\n          <td>Model Match:</td>\n          <td class="coordinates">'.concat(
+                            r,
+                            '</td>\n        </tr>\n        '
+                          )
+                        : '',
+                      '\n        '
+                    )
+                    .concat(
+                      !e && l
+                        ? '\n        <tr>\n          <td>Position:</td>\n          <td>'.concat(
+                            l,
+                            '</td>\n        </tr>\n        '
+                          )
+                        : '',
+                      '\n        '
+                    )
+                    .concat(
+                      s
+                        ? '\n        <tr>\n          <td>Source:</td>\n          <td>'.concat(
+                            s,
+                            '</td>\n        </tr>\n        '
+                          )
+                        : '',
+                      '\n        '
+                    )
+                    .concat(
+                      u
                         ? '\n        <tr>\n          <td>Target:</td>\n          <td>'
-                            .concat(l)
+                            .concat(u)
                             .concat(
-                              u ? ' - '.concat(u) : '',
+                              c ? ' - '.concat(c) : '',
                               '</td>\n        </tr>\n        '
                             )
                         : '',
                       '\n        '
                     )
                     .concat(
-                      c
+                      f
                         ? '\n        <tr>\n          <td>Query:</td>\n          <td>'
-                            .concat(c)
+                            .concat(f)
                             .concat(
-                              f ? ' - '.concat(f) : '',
+                              h ? ' - '.concat(h) : '',
                               '</td>\n        </tr>\n        '
                             )
                         : '',
@@ -21683,7 +21698,7 @@ var DomainGfx = (function (t) {
         return e;
       },
       gr = function (t, e) {
-        var r = Le();
+        var r = Oe();
         return {
           gradientId: r,
           gradientElement: $e.apply(
@@ -21803,7 +21818,7 @@ var DomainGfx = (function (t) {
       Ar = function (t) {
         return kr(0, t);
       },
-      Or = function (t, e, r, n, i, o, a) {
+      Lr = function (t, e, r, n, i, o, a) {
         return 'A'
           .concat(t, ',')
           .concat(e, ',')
@@ -21813,7 +21828,7 @@ var DomainGfx = (function (t) {
           .concat(o, ',')
           .concat(a);
       },
-      Lr = function (t) {
+      Or = function (t) {
         var e = t.start,
           r = t.end,
           n = t.startStyle,
@@ -21844,7 +21859,7 @@ var DomainGfx = (function (t) {
                   case 'arrow':
                     return kr(5, 5) + kr(-5, 5);
                   case 'curved':
-                    return Or(5, 5, 0, 0, 1, e + 5, 10);
+                    return Lr(5, 5, 0, 0, 1, e + 5, 10);
                   case 'straight':
                   default:
                     return Tr(5) + Ar(10) + Tr(-5);
@@ -21871,7 +21886,7 @@ var DomainGfx = (function (t) {
                   case 'arrow':
                     return kr(-5, -5) + kr(5, -5);
                   case 'curved':
-                    return Or(5, 5, 0, 0, 1, 5, 0);
+                    return Lr(5, 5, 0, 0, 1, 5, 0);
                   case 'straight':
                   default:
                     return Tr(-5) + Ar(-10) + Tr(5);
@@ -21898,7 +21913,7 @@ var DomainGfx = (function (t) {
               n = t.aliEnd,
               i = t.end,
               o = t.residueWidth,
-              a = Le();
+              a = Oe();
             return {
               maskId: a,
               maskElement: Ke(
@@ -21963,7 +21978,7 @@ var DomainGfx = (function (t) {
           Ee(y).set('maxwidth', (s - i) * e),
           Ye(
             null,
-            Lr({
+            Or({
               start: i,
               end: s,
               startStyle: l,
@@ -22306,7 +22321,7 @@ var DomainGfx = (function (t) {
               );
               Ee(n).set('entity', 'motif'), Wr(n, t), r._canvas.appendChild(n);
             }),
-            (this._spotlight = a && Le()),
+            (this._spotlight = a && Oe()),
             (this._defs = qe(
               null,
               this._spotlight &&
