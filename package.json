@@ -1,12 +1,14 @@
 {
   "name": "domain-gfx",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Domain graphics drawing library",
   "main": "dist/domain-gfx.js",
   "jsnext": "src/index.js",
   "module": "src/index.js",
   "author": "Aurélien Luciani <luciani@ebi.ac.uk> (https://github.com/aurel-l)",
-  "contributors": ["Aleksandar Rajković <aleksandar@ebi.ac.uk> (https://github.com/arajkovic"],
+  "contributors": [
+    "Aleksandar Rajković <aleksandar@ebi.ac.uk> (https://github.com/arajkovic"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/EBI-Metagenomics/domain-gfx.git"
