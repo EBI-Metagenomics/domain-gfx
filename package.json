@@ -23,7 +23,7 @@
   ],
   "dependencies": {
     "core-js": "3.8.1",
-    "lodash-es": "4.17.15",
+    "lodash-es": "4.17.21",
     "regenerator-runtime": "0.13.7"
   },
   "devDependencies": {
